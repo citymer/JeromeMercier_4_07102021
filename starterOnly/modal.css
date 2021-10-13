@@ -501,6 +501,9 @@ footer {
     font-size: 2rem;
     white-space: normal;
   }
+  h1 br{
+    display: none;
+  }
   .hero-text {
     width: unset;
     font-size: 1rem;
