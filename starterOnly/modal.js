@@ -15,17 +15,18 @@ const btnX = document.querySelector(".close");//selectionne le bouton (X) du for
 const form = document.querySelector("form");//selectionne le formulaire (balise <form>)
 
 
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 btnX.addEventListener("click", closeX);//détecte le click sur le bouton (X)
 form.addEventListener('submit', (e) => {e.preventDefault();})// annule la fonction par défaut du bouton d'envoi
 
 
+
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
-
 function closeX(){
   modalbg.style.display = "none";            // fonction qui ferme le formulaire en cliquant sur bouton (X)
 }
