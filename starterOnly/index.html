@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
      <title>Reservation</title>
      <meta name="viewport" content="width=device-width,initial-scale=1" />
-     <link rel="stylesheet" href="modal.css" />
+     <link rel="stylesheet" href="./modal.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
@@ -55,21 +55,22 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
+              id="incription"
               name="reserve"
               action="index.html"
-              method="get"
-              onsubmit="return validate();"
+              method="get" 
             >
               <div
-                class="formData">
+                class="formData" data-error="Vous devez entrer 2 caractères minimum." data-error-visible = "true">
                 <label for="prenom">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="prenom"
-                  name="first"
-                  minlength="2"
+                  name="first" 
+                  minlength="2"               
                 /><br>
+                
               </div>
               <div
                 class="formData">
@@ -79,8 +80,8 @@
                   type="text"
                   id="nom"
                   name="last"
-                  minlength="2"
                 /><br>
+                
               </div>
               <div
                 class="formData">
@@ -91,6 +92,7 @@
                   id="email"
                   name="email"
                 /><br>
+             
               </div>
               <div
                 class="formData">
@@ -101,11 +103,13 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
+                
               </div>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
@@ -176,6 +180,7 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+                <small></small>
               </div>
 
               <div
@@ -199,6 +204,7 @@
                 <br>
               </div>
               <input
+                id="validation"
                 class="btn-submit"
                 type="submit"
                 value="C'est parti"
