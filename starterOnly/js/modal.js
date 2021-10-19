@@ -28,10 +28,14 @@ btnX.addEventListener("click", closeX);//Ecouter le click sur le bouton (X)
 form.email.addEventListener('change',function() {
   validemail(this); // Parametre "this" element qui est écouté(email)
 })
-
+form.birthdate.addEventListener('change',function(){
+  validbirthdate(this);
+})
 form.addEventListener('submit', (e) => {e.preventDefault();// annule la fonction par défaut du bouton d'envoi
      validPrenom();
      validnom();
+     validemail();
+     validbirthdate();
      })
 
 // launch modal form

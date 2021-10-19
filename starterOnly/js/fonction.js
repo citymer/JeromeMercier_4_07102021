@@ -37,3 +37,13 @@ function validnom() {
         return false
       }
   }
+   // fonction qui permet d'afficher une erreur si la date n'est pas valide
+   function validbirthdate (){
+    if (birthdate.value.trim().length === 10) {
+        birthdate.parentElement.setAttribute('data-error-visible', 'data-error');
+        return true
+   }else{
+    birthdate.parentElement.setAttribute('data-error-visible','true', 'data-error');
+    return false
+   }
+}
