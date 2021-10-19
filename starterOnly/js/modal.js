@@ -20,9 +20,14 @@ let email = document.getElementById('email');
 
 
 
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-btnX.addEventListener("click", closeX);//détecte le click sur le bouton (X)
+btnX.addEventListener("click", closeX);//Ecouter le click sur le bouton (X)
+// Ecouter la modification de l'email
+form.email.addEventListener('change',function() {
+  validemail(this); // Parametre "this" element qui est écouté(email)
+})
 
 form.addEventListener('submit', (e) => {e.preventDefault();// annule la fonction par défaut du bouton d'envoi
      validPrenom();
