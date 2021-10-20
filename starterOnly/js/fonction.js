@@ -14,7 +14,7 @@ function validPrenom() {
 
 // Fonction qui permet d afficher une erreur si le nom n'a pas 2 caractéres minimum
 function validNom() {
-    if (prenom.value.trim().length > 1) {
+    if (nom.value.trim().length > 1) {
       console.log('oui');
       nom.parentElement.setAttribute('data-error-visible','data-error');
       return true
@@ -25,9 +25,9 @@ function validNom() {
     }
     
   }
-
+console.log(validNom);
   // fonction qui permet d'afficher une erreur si l'email n'est pas valide
-  function validemail(){
+  function validEmail(){
     const regex = '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$';
       if (email.value.trim().match(regex)) {
           console.log('ouais');
@@ -40,12 +40,24 @@ function validNom() {
       }
   }
    // fonction qui permet d'afficher une erreur si la date n'est pas valide
-   function validbirthdate (){
-    if (birthdate.value.trim().length === 10) {
-        birthdate.parentElement.setAttribute('data-error-visible', 'data-error');
-        return true
+   function validBirthdate (){
+    if (birthdate.value.trim().length !== 10) {
+      console.log('pfff!');
+      birthdate.parentElement.setAttribute('data-error-visible','true', 'data-error');
+      return false    
    }else{
-    birthdate.parentElement.setAttribute('data-error-visible','true', 'data-error');
-    return false
+      console.log('youpi');
+      birthdate.parentElement.setAttribute('data-error-visible', 'data-error');
+      return true
    }
+}
+// fonction qui permet d'afficher une erreur si une valeur n'est pas choisie
+function validNbrTournois() {
+    if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
+        quantity.parentElement.setAttribute('data-error-visible', 'true','data-error');
+        return false;
+ }else{
+    quantity.parentElement.setAttribute('data-error-visible', 'data-error');
+    return true;
+ }
 }

@@ -13,10 +13,13 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const btnX = document.querySelector(".close");//selectionne le bouton (X) du formulaire
 const form = document.querySelector("form");//selectionne le formulaire (balise <form>)
+const input = document.querySelector("input");
 
 const prenom = document.getElementById('prenom');
 const nom = document.getElementById('nom');
 const email = document.getElementById('email');
+const birthdate = document.getElementById('birthdate');
+const quantity = document.getElementById('quantity');
 
 
 
@@ -24,25 +27,45 @@ const email = document.getElementById('email');
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 btnX.addEventListener("click", closeX);//Ecouter le click sur le bouton (X)
-form.prenom.addEventListener('change',function() {
-  validPrenom(this);
+prenom.addEventListener('change',function() {
+  validPrenom(prenom);
 })
-form.nom.addEventListener('change',function() {
-  valiNnom(this);
+nom.addEventListener('change',function() {
+  validNom(nom);
 })
 // Ecouter la modification de l'email
-form.email.addEventListener('change',function() {
-  validEmail(this); // Parametre "this" element qui est écouté(email)
+email.addEventListener('change',function() {
+  validEmail(email); // Parametre element qui est écouté(email)
 })
-form.birthdate.addEventListener('change',function(){
-  validBirthdate(this);
+birthdate.addEventListener('change',function(){
+  validBirthdate(birthdate);
 })
-form.addEventListener('submit', (e) => {e.preventDefault();// annule la fonction par défaut du bouton d'envoi
-     validPrenom();
-     validNom();
-     validEmail();
-     validBirthdate();
-     })
+quantity.addEventListener('change',function() {
+  validNbrTournois(quantity);
+})
+form.addEventListener('submit', (e) => {e.preventDefault()});// annule la fonction par défaut du bouton d'envoi
+input.addEventListener('change',(e) => {
+    switch (e.target.id) {
+      case "prenom":
+        validPrenom();
+        break;
+      case "nom":
+        validNom();
+        break;
+      case "email":
+        validEmail();
+        break;
+      case "birthdate":
+        validBirthdate();
+        break;
+      case "quantity":
+        validNbrTournois();
+        break;
+      default:
+        null;
+        break;          
+    }
+ })
 
 // launch modal form
 function launchModal() {
