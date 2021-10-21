@@ -25,7 +25,7 @@ function validNom() {
     }
     
   }
-console.log(validNom);
+
   // fonction qui permet d'afficher une erreur si l'email n'est pas valide
   function validEmail(){
     const regex = '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$';
@@ -53,11 +53,39 @@ console.log(validNom);
 }
 // fonction qui permet d'afficher une erreur si une valeur n'est pas choisie
 function validNbrTournois() {
-    if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
+  console.log('faux');
+    if (quantity.value.trim().length === 0 || quantity.value.trim() < 0) {
         quantity.parentElement.setAttribute('data-error-visible', 'true','data-error');
         return false;
  }else{
+   console.log('vrai');
     quantity.parentElement.setAttribute('data-error-visible', 'data-error');
     return true;
  }
+}
+//fonction qui permet d'afficher une erreur si une ville n'est pas sélectionnée
+function validVilles() {
+  if (document.getElementById("newyork").checked === true ||
+      document.getElementById("sanfrancisco").checked === true ||
+      document.getElementById("seattle").checked === true ||
+      document.getElementById("chicago").checked === true ||
+      document.getElementById("boston").checked === true ||
+      document.getElementById("portland").checked === true) {
+    console.log('ouhoui');
+    villes.setAttribute('data-error-visible','data-error');
+    return true;
+  }else{
+    console.log('nounon');
+    villes.setAttribute('data-error-visible','true','data-error');
+    return false;
+  }
+}
+// Au clic du bouton "c'est parti", controle tous les champs afin de vérifier qu'ils soient valides
+function validFormulaire() {
+  validPrenom();
+  validNom();
+  validEmail();
+  validBirthdate();
+  validNbrTournois();
+  validVilles();
 }
