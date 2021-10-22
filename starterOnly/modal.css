@@ -17,7 +17,7 @@ body {
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
-  height: 100%;
+  height: 1024px;
   margin: 0 auto;
 }
 
@@ -106,7 +106,7 @@ img {
 } 
 
 main {
-  font-size: 83%;
+  font-size: 130%;
   font-weight: bolder;
   color: black;
   padding-top: 0.5vw;
@@ -187,7 +187,8 @@ main {
 .content {
   margin: 5% auto;
   width: 100%;
-  max-width: 600px;
+  height: 850.61px;
+  max-width: 536px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
@@ -348,7 +349,8 @@ input {
   margin: 0 auto;
   border-radius: 7px;
   font-size: 1rem;
-  padding: 12px 82px;
+  width: 182.55px;
+  height:40.14px;
   color: #fff;
   cursor: pointer;
   border: 0;
@@ -425,7 +427,7 @@ input {
   font-size: 16px;
 }
 .hero-section {
-  max-height: 73vh;
+  max-height: 83vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -470,9 +472,9 @@ input {
   outline: none;
   text-transform: capitalize;
   font-size: 1.3rem;
-  padding: 15px 23px;
+  padding: 10px 23px;
   margin: 0;
-  margin-top: 40px;
+  margin-top: 180px;
 }
 .hero-img {
   grid-column: span 8;
@@ -487,7 +489,7 @@ input {
   color: #fe142f;
   padding: 0;
   font-size: 1rem;
-  margin: 20px 0 40px;
+  margin: 60px 0 10px;
   font-weight: bolder;
 }
 .hero-section > .btn-signup {
@@ -521,6 +523,9 @@ footer {
   .hero-headline {
     font-size: 2rem;
     white-space: normal;
+  }
+  .logoHeader{
+    height: 2rem;
   }
   h1 br{
     display: none;
@@ -579,7 +584,7 @@ footer {
 }
 @media screen and (max-height: 568px){
   main{
-    font-size: 100%;
+    font-size: 80%;
   }
 }
 

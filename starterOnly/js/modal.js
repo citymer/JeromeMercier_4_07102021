@@ -74,6 +74,7 @@ btncparti.addEventListener('click',function(){
 
 // annule la fonction par défaut du bouton d'envoi
 form.addEventListener('submit', (e) => {e.preventDefault();
+});
     if (validFormTrue() == true) {
       console.log('c est vrai');
       modalbg.style.display = 'none';
@@ -83,7 +84,6 @@ form.addEventListener('submit', (e) => {e.preventDefault();
         console.log('c est faux');
         validFormulaire();
       }
-});
 
 
 
