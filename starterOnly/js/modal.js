@@ -1,18 +1,9 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const btnX = document.querySelector(".close");//selectionne le bouton (X) du formulaire
-const form = document.querySelector("form");//selectionne le formulaire (balise <form>)
+const form = document.querySelector("form");
 const input = document.querySelector("input");
 const prenom = document.getElementById('prenom');
 const nom = document.getElementById('nom');
@@ -20,14 +11,18 @@ const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const quantity = document.getElementById('quantity');
 const villes = document.getElementById('villes');
-const btncparti = document.getElementById('validation');
+const btncparti = document.getElementById('validation');//selectionne le bouton "c'est parti"
+const newyork = document.getElementById("newyork");
+const sanfrancisco = document.getElementById("sanfrancisco");
+const seattle = document.getElementById("seattle");
+const chicago = document.getElementById("chicago");
+const boston = document.getElementById("boston");
+const portland = document.getElementById("portland");
+const condition = document.getElementById("condition");
+const accepte = document.getElementById("accepte");
 
-const newyork = document.getElementById("newyork").checked;
-const sanfrancisco = document.getElementById("sanfrancisco").checked;
-const seattle = document.getElementById("seattle").checked;
-const chicago = document.getElementById("chicago").checked;
-const boston = document.getElementById("boston").checked;
-const portland = document.getElementById("portland").checked; 
+/********************************************************************************* */
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 btnX.addEventListener("click", closeX);//Ecouter le click sur le bouton (X)
@@ -38,9 +33,8 @@ prenom.addEventListener('change',function() {
 nom.addEventListener('change',function() {
   validNom(nom);
 })
-// Ecouter la modification de l'email
 email.addEventListener('change',function() {
-  validEmail(email); // Parametre element qui est écouté(email)
+  validEmail(email); 
 })
 birthdate.addEventListener('change',function(){
   validBirthdate(birthdate);
@@ -48,43 +42,36 @@ birthdate.addEventListener('change',function(){
 quantity.addEventListener('change',function() {
   validNbrTournois(quantity);
 })
+// Ecoute la modification des villes
+newyork.addEventListener('change',function(){
+  validVilles(newyork);
+})
+sanfrancisco.addEventListener('change',function(){
+  validVilles(sanfrancisco);
+})
+seattle.addEventListener('change',function(){
+  validVilles(seattle);
+})
+chicago.addEventListener('change',function(){
+  validVilles(chicago);
+})
+boston.addEventListener('change',function(){
+  validVilles(boston);
+})
+portland.addEventListener('change',function(){
+  validVilles(portland);
+})
+// Ecoute les conditions générales
+condition.addEventListener('change',function(){
+  validConditions(condition);
+})
+//Ecoute le click du bouton
 btncparti.addEventListener('click',function(){
   validFormulaire(btncparti);
 })
-form.addEventListener('submit', (e) => {e.preventDefault()});// annule la fonction par défaut du bouton d'envoi
 
-// Permet de controler tous les champs du formulaire
-input.addEventListener('change',(e) => {
-    switch (e.target.id) {
-      case "prenom":
-        validPrenom();
-        break;
-      case "nom":
-        validNom();
-        break;
-      case "email":
-        validEmail();
-        break;
-      case "birthdate":
-        validBirthdate();
-        break;
-      case "quantity":
-        validNbrTournois();
-        break;
-      default:
-        null;
-        break;          
-    }
- })
-
-// launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
-}
-function closeX(){
-  modalbg.style.display = "none";            // fonction qui ferme le formulaire en cliquant sur bouton (X)
-}
-
+// annule la fonction par défaut du bouton d'envoi
+form.addEventListener('submit', (e) => {e.preventDefault()});
 
 
 

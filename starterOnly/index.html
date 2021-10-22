@@ -61,7 +61,8 @@
               method="get" 
             >
               <div
-                class="formData" data-error="Vous devez entrer 2 caractères minimum." data-error-visible = "false">
+                class="formData validform"  data-error="Vous devez entrer 2 caractères minimum." data-error-visible = "false"
+                >
                 <label for="prenom">Prénom</label><br>
                 <input
                   class="text-control"
@@ -189,19 +190,21 @@
               </div>
 
               <div
-                class="formData">
+                class="formData" id="accepte" data-error="Vous devez accepter les conditions d'utilisation." data-error-visible = "false">
                 <input
                   class="checkbox-input"
                   type="checkbox"
                   id="condition"
-                  checked
                 />
                 <label class="checkbox2-label" for="condition">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
-                <input class="checkbox-input" type="checkbox" id="evenement" />
+                <input 
+                  class="checkbox-input" 
+                  type="checkbox" 
+                  id="evenement" />
                 <label class="checkbox2-label" for="evenement">
                   <span class="checkbox-icon"></span>
                   Je Je souhaite être prévenu des prochains évènements.
