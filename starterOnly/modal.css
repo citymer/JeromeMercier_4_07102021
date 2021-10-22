@@ -106,7 +106,7 @@ img {
 } 
 
 main {
-  font-size: 130%;
+  font-size: 83%;
   font-weight: bolder;
   color: black;
   padding-top: 0.5vw;
@@ -160,7 +160,7 @@ main {
 .smFont {
   font-size: 16px;
 }
-
+/*formulaire*/
 .bground {
   display: none;
   position: fixed;
@@ -172,7 +172,18 @@ main {
   overflow: auto;
   background-color: rgba(255, 255, 255, 1);
 }
-
+/*formulaire validé*/
+.modalValid {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 1);
+}
 .content {
   margin: 5% auto;
   width: 100%;
@@ -185,10 +196,11 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
-}  
+} 
+
 .modal-body {
-  padding: 15px 8%;
-  margin: 15px auto;
+  padding: 7px 8%;
+  margin: 7px auto;
 }
 
 label {

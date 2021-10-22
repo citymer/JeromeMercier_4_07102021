@@ -90,11 +90,9 @@ function validVilles(){
 // fonction qui permet d'afficher une erreur si les conditions d'utilisation ne sont pas cochées
 function validConditions() {
   if (document.getElementById("condition").checked === true) {
-    console.log('ooooooooo');
     accepte.setAttribute('data-error-visible','data-error');
     return true;
   }else if(document.getElementById("condition").checked === false) {
-    console.log('nnnnnnn');
     accepte.setAttribute('data-error-visible','true','data-error');
     return false;
   }
@@ -114,13 +112,16 @@ function validFormulaire() {
 // Fonction qui verifie que tous les champs soient "true"
 function validFormTrue() {
   if (validPrenom() === true 
-  && validNom === true
-  && validEmail === true
-  && validBirthdate == true
-  && validNbrTournois === true
-  && validVilles === true
-  &&validConditions === true) {
+  && validNom() === true
+  && validEmail() === true
+  && validBirthdate() == true
+  && validNbrTournois() === true
+  && validVilles() === true
+  &&validConditions() === true) {
+    console.log('yyyyyeesss');
     return true
   }
-  return false
+  console.log('fauxxxxxx');
+    return false
 }
+
