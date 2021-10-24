@@ -109,14 +109,12 @@ main {
   font-size: 130%;
   font-weight: bolder;
   color: black;
-  padding-top: 0.5vw;
+  padding-top: 4.5vw;
   padding-left: 2vw;
   padding-right: 2vw;
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -187,7 +185,6 @@ main {
 .content {
   margin: 5% auto;
   width: 100%;
-  height: 850.61px;
   max-width: 536px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
@@ -202,13 +199,13 @@ main {
 .modal-body {
   padding: 7px 8%;
   margin: 7px auto;
+  height: 100%;
 }
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: normal;
-  display: inline-block;
   margin-bottom: 11px;
 }
 input {
@@ -347,6 +344,7 @@ input {
   background: #fe142f;
   display: block;
   margin: 0 auto;
+  margin-top: 30px;
   border-radius: 7px;
   font-size: 1rem;
   width: 182.55px;
@@ -501,12 +499,20 @@ footer {
   margin: 0 20px;
 }
 @media screen and (max-width: 992px) {
+  body {
+    display: block;
+    height: 100%;
+  }
+  .content{
+    height: 110%;
+  }
   .topnav{
     margin-bottom: 0px;
   }
   .hero-section {
     display: block;
     box-shadow: unset;
+    max-height: 90%;
   }
   .hero-content {
     background: #fff;
@@ -537,7 +543,7 @@ footer {
   }
   .hero-img img {
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 13px;
   }
   .hero-section > .btn-signup {
     display: block;
@@ -545,49 +551,62 @@ footer {
     padding: 12px 35px;
   }
   .copyrights {
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
   }
-
+  form{
+    display: flex;
+    flex-direction: column;
+    ;
+  }
+  .bground{
+    height: 100%;
+    margin-top: 15%;
+  }
+  .formData{
+    height: 86px;
+  }
 
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
 
   .content{
-    width: 90%;
-    height: 97%;
-    margin-top: 8px;
+    width: 100%;
+    height: 135%;
+    margin-top: auto;
+    margin-bottom: 1px;
+  }
+  .main{
+    font-size: none;
+  }
+  .formData{
+    margin-top: -10px;
+    
+  }
+  .btn-submit{
+    margin-top: 56px;
+  }
+  .formData[data-error]::after {
+    content: attr(data-error);
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    line-height: 0.3;
+  }
+  .line-height{
+    line-height: 0.8em;
+    margin-top: 1px;
+    margin-bottom: 3px;
+  }
+  .bottom{
+    padding-bottom: 5px;
   }
   .text-control{
-    height: 30px;
-    padding: 0;
+    height: auto;
   }
-  .text-label{
-    padding-top: 18px;
-  }
-  .modal-body {
-   padding: 1px 8%;
- }
- label{
-   margin-top: 5px;
-   margin-bottom: 1px;
-   font-size: 0.8rem;
- }
- .text-label{
-   font-size: 0.8rem;
- }
- .fromData{
-   height: 25px;
-   margin-top: 5px;
- }
 
 }
-@media screen and (max-height: 568px){
-  main{
-    font-size: 80%;
-  }
-}
-
 @keyframes modalopen {
   from {
     opacity: 0;
