@@ -137,18 +137,7 @@ main {
   overflow: auto;
   background-color: rgba(255, 255, 255, 1);
 }
-/*formulaire validé*/
-.modalValid {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(255, 255, 255, 1);
-}
+
 .content {
   margin: 5% auto;
   width: 100%;
@@ -464,6 +453,42 @@ footer {
   padding-left: 2vw;
   padding-right: 2vw;
   margin: 0 20px;
+}
+/*formulaire validé*/
+.bground-valid {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 1);
+}
+.content-valid{
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+  height: 720px;
+  background: #232323;
+  border-radius: 10px;
+  position: relative;
+  padding-top: 10px;
+}
+.modal-body-valid{
+  height: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto 50px;
+}
+.text-valid{
+  color: #c4c4c4;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
 }
 @media screen and (max-width: 992px) {
   body {
