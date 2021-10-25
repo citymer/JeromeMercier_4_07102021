@@ -586,23 +586,37 @@ footer {
     display: block;
     text-align: left;
   }
- 
+  .content-valid{
+    height: 90%;
+  }
+  .btn-fermer{
+    margin-top: 90px;
+  }
 
 }
 @media screen and (max-width: 767px){
   body{
     height: 100%;
   }
-
+  .modal-body-valid{
+    height: 75%;
+  }
   .content{
     width: 100%;
     height: 135%;
     margin-top: auto;
     margin-bottom: 1px;
   }
+  .content-valid{
+    margin-top: 0;
+  }
   .main{
     height: 100%;
     font-size: none;
+  }
+  .bground-valid{
+    margin-top: 60px;
+    height: 110%;
   }
   .formData{
     margin-top: -10px; 
@@ -612,6 +626,9 @@ footer {
   }
   .btn-submit{
     margin-top: 24px;
+  }
+  .btn-fermer{
+    margin-top: 0px;
   }
   .formData[data-error]::after {
     content: attr(data-error);
