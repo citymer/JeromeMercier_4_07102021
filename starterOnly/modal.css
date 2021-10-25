@@ -454,7 +454,7 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-/*formulaire validé*/
+/********  formulaire validé  *********/
 .bground-valid {
   display: none;
   position: fixed;
@@ -485,11 +485,23 @@ footer {
   margin: auto 50px;
 }
 .text-valid{
-  color: #c4c4c4;
+  color: white;
   text-align: center;
   font-size: 1.5rem;
   font-style: italic;
 }
+.close-valid {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  color: white;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+
 @media screen and (max-width: 992px) {
   body {
     display: block;

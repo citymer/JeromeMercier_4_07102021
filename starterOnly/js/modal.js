@@ -22,6 +22,7 @@ const condition = document.getElementById("condition");
 const accepte = document.getElementById("accepte");
 const modalvalid = document.querySelector(".bground-valid");
 const btnFermer = document.getElementById("btn-fermer");
+const closevalid = document.querySelector('#closevalid');
 
 /********************************************************************************* */
 
@@ -67,7 +68,7 @@ portland.addEventListener('change',function(){
 condition.addEventListener('change',function(){
   validConditions(condition);
 })
-//Ecoute le click du bouton
+//Message de confirmation aprés validation
 btncparti.addEventListener('click',function(){
   validFormulaire(btncparti);
   if (validFormTrue() === true) {
@@ -75,19 +76,15 @@ btncparti.addEventListener('click',function(){
     modalvalid.style.display = 'block';
   }
 })
-
+btnFermer.addEventListener('click',(e) => {
+  modalvalid.style.display = 'none';
+})
+closevalid.addEventListener('click',(closevalidX));
 // annule la fonction par défaut du bouton d'envoi
 form.addEventListener('submit', (e) => {e.preventDefault();
 });
-   // if (validFormTrue() == true) {
-     // console.log('c est vrai');
-     // modalbg.style.display = 'none';
-      //modalvalid.style.display = 'block';
-      //document.querySelector('form').reset();
-     // }else {
-       // console.log('c est faux');
-       // validFormulaire();
-     // }
 
 
-
+function closevalidX() {
+  modalvalid.style.display = 'none';
+}

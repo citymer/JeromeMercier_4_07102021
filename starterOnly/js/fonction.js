@@ -13,7 +13,9 @@ function launchModal() {
 function closeX(){
   modalbg.style.display = "none";            // fonction qui ferme le formulaire en cliquant sur bouton (X)
 }
-
+function closevalidX() {
+  modalvalid.style.display = "none";
+}
 
 
 // Fonction qui permet d afficher une erreur si le prénom n'a pas 2 caractéres minimum
@@ -121,7 +123,6 @@ function validFormTrue() {
     console.log('yyyyyeesss');
     return true
   }
-  console.log('fauxxxxxx');
     return false
 }
 
