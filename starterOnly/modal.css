@@ -31,8 +31,8 @@ img {
 }
 
 .topnav {
-  overflow: hidden;
   margin: 3.5%;
+  max-height: 180px;
 }
 .header-logo {
     float: left;
@@ -71,39 +71,6 @@ img {
 .topnav .icon {
   display: none;
 }
-
-@media screen and (max-width: 768px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-} 
 
 main {
   font-size: 130%;
@@ -504,10 +471,13 @@ footer {
     height: 100%;
   }
   .content{
-    height: 110%;
+    height: 100%;
+    margin-top: auto;
   }
+
   .topnav{
     margin-bottom: 0px;
+    overflow: hidden;
   }
   .hero-section {
     display: block;
@@ -563,12 +533,29 @@ footer {
     height: 100%;
     margin-top: 15%;
   }
-  .formData{
-    height: 86px;
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
   }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+ 
 
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
+  body{
+    height: 100%;
+  }
 
   .content{
     width: 100%;
@@ -577,14 +564,17 @@ footer {
     margin-bottom: 1px;
   }
   .main{
+    height: 100%;
     font-size: none;
   }
   .formData{
-    margin-top: -10px;
-    
+    margin-top: -10px; 
+  }
+  .text-label{
+    padding:3vw;
   }
   .btn-submit{
-    margin-top: 56px;
+    margin-top: 24px;
   }
   .formData[data-error]::after {
     content: attr(data-error);
@@ -605,8 +595,21 @@ footer {
   .text-control{
     height: auto;
   }
-
+  .checkbox-label{
+    font-size: 10px;
+  }
+ 
 }
+
+ @media screen and (max-width: 540px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+  }
+} 
+
 @keyframes modalopen {
   from {
     opacity: 0;
