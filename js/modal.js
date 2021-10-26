@@ -1,17 +1,16 @@
-// DOM Elements
-const modalbg = document.querySelector(".bground");
+/*********   DOM Elements   ************/
+
+// bouton "je m'inscris" à la page d'accueil
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
-const btnX = document.querySelector(".close");//selectionne le bouton (X) du formulaire
+// Formulaire
 const form = document.querySelector("form");
-const input = document.querySelector("input");
 const prenom = document.getElementById('prenom');
 const nom = document.getElementById('nom');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const quantity = document.getElementById('quantity');
 const villes = document.getElementById('villes');
-const btncparti = document.getElementById('validation');//selectionne le bouton "c'est parti"
+const btncparti = document.getElementById('validation');
 const newyork = document.getElementById("newyork");
 const sanfrancisco = document.getElementById("sanfrancisco");
 const seattle = document.getElementById("seattle");
@@ -20,15 +19,22 @@ const boston = document.getElementById("boston");
 const portland = document.getElementById("portland");
 const condition = document.getElementById("condition");
 const accepte = document.getElementById("accepte");
+const btnX = document.querySelector(".close");
+const modalbg = document.querySelector(".bground");
+//formulaire message validé
 const modalvalid = document.querySelector(".bground-valid");
 const btnFermer = document.getElementById("btn-fermer");
 const closevalid = document.querySelector('#closevalid');
 
-/********************************************************************************* */
+/***************   addEventListener   ************* */
 
-// launch modal event
+// annule la fonction par défaut du bouton d'envoi
+form.addEventListener('submit', (e) => {e.preventDefault();
+});
+
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-btnX.addEventListener("click", closeX);//Ecouter le click sur le bouton (X)
+
+btnX.addEventListener("click", closeX);
 
 prenom.addEventListener('change',function() {
   validPrenom(prenom);
@@ -68,23 +74,21 @@ portland.addEventListener('change',function(){
 condition.addEventListener('change',function(){
   validConditions(condition);
 })
-//Message de confirmation aprés validation
-btncparti.addEventListener('click',function(){
-  validFormulaire(btncparti);
-  if (validFormTrue() === true) {
-    modalbg.style.display = 'none';
-    modalvalid.style.display = 'block';
-  }
-})
+// ferme le message du formulaire validé
 btnFermer.addEventListener('click',(e) => {
   modalvalid.style.display = 'none';
 })
+// bouton (X) du message formulaire validé
 closevalid.addEventListener('click',(closevalidX));
-// annule la fonction par défaut du bouton d'envoi
-form.addEventListener('submit', (e) => {e.preventDefault();
-});
 
 
-function closevalidX() {
-  modalvalid.style.display = 'none';
-}
+//Message de confirmation aprés controle et validation du formulaire
+btncparti.addEventListener('click',function(){
+  validFormulaire(btncparti);
+ if (validFormTrue() === true) {
+   modalbg.style.display = 'none';
+   modalvalid.style.display = 'block';
+ }
+})
+
+

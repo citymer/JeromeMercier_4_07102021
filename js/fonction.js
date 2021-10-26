@@ -1,22 +1,15 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-// launch modal form
+// function qui fait apparaitre le formulaire
 function launchModal() {
   modalbg.style.display = "block";
 }
+// fonction qui ferme le formulaire en cliquant sur le bouton (X)
 function closeX(){
-  modalbg.style.display = "none";            // fonction qui ferme le formulaire en cliquant sur bouton (X)
+  modalbg.style.display = "none";    
 }
+// fonction qui ferme le message de validition du formulaire
 function closevalidX() {
   modalvalid.style.display = "none";
 }
-
 
 // Fonction qui permet d afficher une erreur si le prénom n'a pas 2 caractéres minimum
 function validPrenom() {
@@ -26,8 +19,7 @@ function validPrenom() {
     }else  {
       prenom.parentElement.setAttribute('data-error-visible','true','data-error');
       return false
-    }
-    
+    }  
   }
 
 // Fonction qui permet d afficher une erreur si le nom n'a pas 2 caractéres minimum
@@ -38,8 +30,7 @@ function validNom() {
     }else  {
       nom.parentElement.setAttribute('data-error-visible','true','data-error');
       return false
-    }
-    
+    }   
   }
 
   // fonction qui permet d'afficher une erreur si l'email n'est pas valide
@@ -120,9 +111,9 @@ function validFormTrue() {
   && validNbrTournois() === true
   && validVilles() === true
   &&validConditions() === true) {
-    console.log('yyyyyeesss');
     return true
   }
     return false
 }
+
 

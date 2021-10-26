@@ -200,12 +200,6 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-
-/*input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -454,7 +448,7 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-/********  formulaire validé  *********/
+/******** Message formulaire validé  *********/
 .bground-valid {
   display: none;
   position: fixed;
@@ -511,7 +505,6 @@ footer {
     height: 100%;
     margin-top: auto;
   }
-
   .topnav{
     margin-bottom: 0px;
     overflow: hidden;
@@ -594,6 +587,7 @@ footer {
   }
 
 }
+
 @media screen and (max-width: 767px){
   body{
     height: 100%;
@@ -651,8 +645,7 @@ footer {
   }
   .checkbox-label{
     font-size: 10px;
-  }
- 
+  } 
 }
 
  @media screen and (max-width: 540px) {
