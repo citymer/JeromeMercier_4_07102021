@@ -1,3 +1,11 @@
+function editNav() {
+  var x = document.getElementById('myTopnav');
+  if (x.className === 'topnav') {
+    x.className += ' responsive';
+  } else {
+    x.className = 'topnav';
+  }
+}
 // function qui fait apparaitre le formulaire
 function launchModal() {
   modalbg.style.display = "block";
